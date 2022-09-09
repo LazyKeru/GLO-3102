@@ -1,0 +1,33 @@
+:root {
+    --darkblue: #050A30;
+    --blue: #143C72;
+    --lightblue: #B1D4E0;
+    --whiteblue: #F4F6FC;
+}
+  
+/* Container to set the the back and front position of the card*/
+.order-inner {
+    position: static;
+    width: 100%;
+}
+  
+.order-front {
+    background: linear-gradient(to right, rgba(244, 246, 252,1), rgba(244, 246, 252,0.2));
+}
+
+.order-back {
+    background-image: url("img/burger.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 1;
+}
+
+/* Position the front and back side */
+.order-front, .order-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}

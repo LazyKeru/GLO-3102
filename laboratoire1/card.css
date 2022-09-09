@@ -1,0 +1,61 @@
+:root {
+    --darkblue: #050A30;
+    --blue: #143C72;
+    --lightblue: #B1D4E0;
+    --whiteblue: #F4F6FC;
+}
+
+/* Menu Card */
+.card {
+    margin: 10px;
+    background-color: transparent;
+    width: 200px;
+    height: 400px;
+}
+  
+/* Container to set the the back and front position of the card*/
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+  
+/* Change background of card threw opacity animation */
+.card:hover .card-front {
+    transition: opacity 1s;
+    opacity: 0;
+}
+.card-front {
+    background-color: var(--whiteblue);
+    transition: opacity 1s;
+    opacity: 1;
+}
+
+.card:hover .card-back {
+    transition: opacity 1s;
+    opacity: 1;
+}
+.card-back {
+    background-color: var(--whiteblue);
+    text-align: left;
+    transition: opacity 1s;
+    opacity: 0;
+}
+
+/* Position the front and back side */
+.card-front, .card-back {
+    border-radius: 25px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+.card-image{
+    background-color: var(--blue);
+    width: 80%;
+    margin: 10%;
+    border-radius: 25px;
+}
