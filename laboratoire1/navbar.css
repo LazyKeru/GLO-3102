@@ -8,27 +8,26 @@
 #navbar{
   position: -webkit-sticky; /* Safari */
   position: sticky;
-  top: 10px;
-  margin: 10px;
+  top: 1%;
+  background-color: var(--blue);
   align-items: center;
   z-index: 10;
+  margin: 2%;
+  border-radius: 10px;
 }
 
 .button {
     background-color: var(--blue);
     border-color: var(--lightblue);
-    border-width: 3px;
+    border-width: 0px 0px 0px 5px;
     border-style: solid;
-    border-radius: 25px;
     color: var(--lightblue);
 }
 
 .button:hover {
     background-color: var(--lightblue);
     border-color: var(--blue);
-    border-width: 3px;
     border-style: solid;
-    border-radius: 25px;
     color: var(--blue);
 }
 
