@@ -7,10 +7,10 @@
 
 /* Menu Card */
 .card {
-    margin: 10px;
+    margin: 2rem;
     background-color: transparent;
-    width: 200px;
-    height: 400px;
+    width: 15rem;
+    height: 20rem;
 }
   
 /* Container to set the the back and front position of the card*/
@@ -23,23 +23,23 @@
   
 /* Change background of card threw opacity animation */
 .card:hover .card-front {
-    transition: opacity 1s;
+    transition: opacity 0.5s;
     opacity: 0;
 }
 .card-front {
     background-color: var(--whiteblue);
-    transition: opacity 1s;
+    transition: opacity 0.5s;
     opacity: 1;
 }
 
 .card:hover .card-back {
-    transition: opacity 1s;
+    transition: opacity 0.5s;
     opacity: 1;
 }
 .card-back {
     background-color: var(--whiteblue);
     text-align: left;
-    transition: opacity 1s;
+    transition: opacity 0.5s;
     opacity: 0;
 }
 

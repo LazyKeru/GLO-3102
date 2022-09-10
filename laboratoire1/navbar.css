@@ -14,6 +14,7 @@
   z-index: 10;
   margin: 2%;
   border-radius: 10px;
+  color: var(--lightblue);
 }
 
 .button {
@@ -26,7 +27,6 @@
 
 .button:hover {
     background-color: var(--lightblue);
-    border-color: var(--blue);
     border-style: solid;
     color: var(--blue);
 }
