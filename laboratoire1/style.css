@@ -5,6 +5,10 @@
     --whiteblue: #F4F6FC;
 }
 
+a{
+    text-decoration: none;
+}
+
 body{
     background-color: var(--whiteblue);
     width: 100%;
@@ -69,4 +73,25 @@ body{
 .users-inner{
     margin-left: 2.5%;
     margin-right: 2.5%;
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.profile-frame{
+    margin: 10%;
+    border: 0.75rem solid var(--blue);
+    background-color: var(--blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.profile-photo{
+    border-radius: 50%;
+    width: 100%;
 }
