@@ -1,0 +1,97 @@
+:root {
+    --darkblue: #050A30;
+    --blue: #143C72;
+    --lightblue: #B1D4E0;
+    --whiteblue: #F4F6FC;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    background-color: var(--whiteblue);
+    width: 100%;
+    margin:0;
+    padding:0;
+}
+
+#introduction{
+    background-color: var(--whiteblue);
+    width: 100%;
+    height: 100%;
+}
+
+#menu{
+    background-color: var(--darkblue);
+    width: 100%;
+    height: 100%;
+}
+
+#about{
+    background-color: var(--darkblue);
+    width: 100%;
+    height: 100%;
+}
+
+.title {
+    color: var(--blue);
+}
+
+.subtitle {
+    color: var(--darkblue);
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.dark h1{
+    color: var(--lightblue);
+}
+
+.dark h2{
+    color: var(--whiteblue);
+}
+
+.users-outer{
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    background-color: var(--whiteblue);
+    border-radius: 25px;
+}
+
+.users-inner{
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.profile-frame{
+    margin: 10%;
+    border: 0.75rem solid var(--blue);
+    background-color: var(--blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.profile-photo{
+    border-radius: 50%;
+    width: 100%;
+}

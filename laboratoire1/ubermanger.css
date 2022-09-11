@@ -1,0 +1,45 @@
+:root {
+    --darkblue: #050A30;
+    --blue: #143C72;
+    --lightblue: #B1D4E0;
+    --whiteblue: #F4F6FC;
+}
+
+.ubermanger-outside{
+    display: flex;
+    background-color: green;
+    border-radius: 1rem;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+}
+
+.ubermanger-outside:hover{
+    background-color: lightgreen;
+}
+.ubermanger-outside:active{
+    box-shadow: inset 0.75rem 0.5rem 1rem green;
+}
+
+.ubermanger-inner{
+    display: flex;
+    margin: 5%;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+.ubermanger-inner h5 {
+    color: white;
+    margin: 0%;
+}
+
+.ubermanger-inner h2 {
+    color: black;
+    margin: 0%;
+}
+
+.ubermanger-inner b {
+    color: white;
+    margin: 0%;
+}
