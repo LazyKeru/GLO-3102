@@ -7,8 +7,14 @@
   
 /* Container to set the the back and front position of the card*/
 
+#introduction{
+    background-color: var(--whiteblue);
+    width: 100%;
+    height: 100%;
+}
+
 #introduction-img-background{
-    background-image: url("img/north.jpg");
+    background-image: url("https://raw.githubusercontent.com/LazyKeru/GLO-3102/main/laboratoire1/img/north.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
