@@ -1,0 +1,76 @@
+:root {
+    --darkblue: #050A30;
+    --blue: #143C72;
+    --lightblue: #B1D4E0;
+    --whiteblue: #F4F6FC;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    background-color: var(--whiteblue);
+    width: 100%;
+    margin:0;
+    padding:0;
+}
+
+.title {
+    color: var(--blue);
+}
+
+.subtitle {
+    color: var(--darkblue);
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.dark h1{
+    color: var(--lightblue);
+}
+
+.dark h2{
+    color: var(--whiteblue);
+}
+
+h1{
+    font-family: "Arial Black", Gadget, sans-serif;
+}
+
+h2{
+    font-family: "Arial Black", Gadget, sans-serif;
+}
+
+h3{
+    font-family: "Arial Black", Gadget, sans-serif;
+}
+
+h4{
+    font-family: "Arial Black", Gadget, sans-serif;
+}
+
+h5{
+    font-family: "Arial Black", Gadget, sans-serif;
+}
+
+h6{
+    font-family: "Arial Black", Gadget, sans-serif;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
