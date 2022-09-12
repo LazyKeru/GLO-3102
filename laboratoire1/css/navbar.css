@@ -1,40 +1,77 @@
 :root {
-    --darkblue: #050A30;
-    --blue: #143C72;
-    --lightblue: #B1D4E0;
-    --whiteblue: #F4F6FC;
+  --darkblue: #050a30;
+  --blue: #143c72;
+  --lightblue: #b1d4e0;
+  --whiteblue: #f4f6fc;
 }
 
-#navbar{
+#navbar {
   position: -webkit-sticky; /* Safari */
   position: sticky;
+  display: flex;
+  justify-content: space-evenly;
   top: 1%;
+  margin: 2rem 10rem 2rem 10rem;
+  padding: 0.7rem;
   background-color: var(--blue);
   align-items: center;
   z-index: 10;
-  margin: 2%;
-  border-radius: 10px;
+  border-radius: 30px;
   color: var(--lightblue);
 }
 
 .button {
-    background-color: var(--blue);
-    border-color: var(--lightblue);
-    border-width: 0px 0px 0px 5px;
-    border-style: solid;
-    color: var(--lightblue);
+  background-color: var(--blue);
+  border-color: var(--lightblue);
+  border-width: 0px 0px 0px 5px;
+  border-style: solid;
+  border-radius: 5px;
+  font-weight: bolder;
+  font-size: 1.2rem;
+  padding: 0.1rem;
+  color: var(--lightblue);
 }
 
 .button:hover {
-    background-color: var(--lightblue);
-    border-style: solid;
-    color: var(--blue);
+  background-color: var(--lightblue);
+  border-style: solid;
+  color: var(--blue);
 }
 
-.button:active{
-    background-color: var(--blue);
+.button:active {
+  background-color: var(--blue);
 }
 
 .button h2 {
-    margin: 10px;
+  margin: 10px;
+}
+
+/* mobile navbar */
+.icon-burger {
+  display: none;
+}
+
+.icon-burger .line {
+  width: 30px;
+  height: 5px;
+  background-color: whitesmoke;
+  margin: 5px;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 900px) {
+  /* style mobile pour la barre de navigation */
+  #navbar {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+  .navbar-logo {
+    display: none;
+  }
+
+  .button {
+    font-size: 0.8rem;
+  }
 }

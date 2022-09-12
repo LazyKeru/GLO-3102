@@ -47,6 +47,7 @@
     text-align: left;
     transition: opacity 0.5s;
     opacity: 0;
+    overflow: visible;
 }
 
 /* Position the front and back side */

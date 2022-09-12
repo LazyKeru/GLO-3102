@@ -1,307 +1,388 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!-- Include the external stylesheets -->
-        <!-- Common CSS -->
-        <link rel="stylesheet" href="css/style.css">
-        <!-- NavBar CSS -->
-        <link rel="stylesheet" href="css/navbar.css">
-        <!-- Introduction CSS -->
-        <link rel="stylesheet" href="css/introduction.css">
-        <!-- Menu CSS -->
-        <link rel="stylesheet" href="css/menu.css">
-        <!-- Order CSS -->
-        <link rel="stylesheet" href="css/order.css">
-        <!-- About CSS -->
-        <link rel="stylesheet" href="css/about.css">
-        
-    </head>
-    <body>
-        <!-- Navbar -->
-        <div class="container row" id="navbar">
-            <h1>BN</h1>
-            <a href="#menu">
-                <div class="button"><h2>Menu</h3></div>
-            </a>
-            <a href="#order">
-                <div class="button"><h2>Order Now</h3></div>
-            </a>
-            <a href="#about">
-                <div class="button"><h2>About Us</h3></div>
-            </a>
+
+<head>
+  <!-- Include the external stylesheets -->
+  <!-- Common CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- NavBar CSS -->
+  <link rel="stylesheet" href="css/navbar.css">
+  <!-- Introduction CSS -->
+  <link rel="stylesheet" href="css/introduction.css">
+  <!-- Menu CSS -->
+  <link rel="stylesheet" href="css/menu.css">
+  <!-- Order CSS -->
+  <link rel="stylesheet" href="css/order.css">
+  <!-- About CSS -->
+  <link rel="stylesheet" href="css/about.css">
+
+</head>
+
+<body>
+  <!-- Navbar -->
+  <div id="navbar">
+    <img class="navbar-logo" src="img/logo.png" alt="A good looking burger" width="5%">
+    <a href="#menu">
+      <div class="button">Menu</div>
+    </a>
+    <a href="#order">
+      <div class="button">Order Now</div>
+    </a>
+    <a href="#about">
+      <div class="button">About Us</div>
+    </a>
+  </div>
+  <!-- Introduction -->
+  <div id="introduction">
+    <div id="introduction-img-background">
+      <div id="introduction-gradient-background">
+        <div class="introduction-container">
+          <div class="introduction-icon-container">
+            <img src="img/logo.png" alt="A good looking burger" width="60%">
+          </div>
+          <div class="introduction-text-containter">
+            <h1 class="introduction-text-title">Meilleur Burger du Nord de la France</h1>
+            <h2 class="introduction-text-subtitle">Des burgers de qualité depuis 2022</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut adipisci, sapiente omnis quisquam nesciunt
+              nulla eius eos maiores tempora tempore voluptatum dolor pariatur hic sed in, libero, molestias rerum sint.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, saepe repellendus! Beatae quis nulla
+              architecto perspiciatis, odit ipsam, nobis voluptatibus iusto eius ipsa pariatur sit doloremque delectus?
+              Illum, totam sunt.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio assumenda, vero quod facilis, consequatur
+              unde cumque incidunt pariatur cupiditate obcaecati nostrum officiis voluptas reiciendis amet temporibus
+              voluptatum explicabo animi consectetur.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-        <!-- Introduction -->
-        <div class="container column" id="introduction">
-            <div id="introduction-img-background">
-                <div id="introduction-gradient-background">
-                    <div class="container row" style="padding-top: 1rem; padding-bottom: 2rem;">
-                        <div class="container column" style="flex:1; align-items:center">
-                            <img src="img/logo.png" alt="A good looking burger" width="60%">
-                        </div>
-                        <div style="flex:2">
-                            <h1 class="title">Meilleur Burger du Nord de la France</h1>
-                            <h2 class="subtitle">Des burgers de qualité depuis 2022</h2>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut adipisci, sapiente omnis quisquam nesciunt nulla eius eos maiores tempora tempore voluptatum dolor pariatur hic sed in, libero, molestias rerum sint.
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, saepe repellendus! Beatae quis nulla architecto perspiciatis, odit ipsam, nobis voluptatibus iusto eius ipsa pariatur sit doloremque delectus? Illum, totam sunt.
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio assumenda, vero quod facilis, consequatur unde cumque incidunt pariatur cupiditate obcaecati nostrum officiis voluptas reiciendis amet temporibus voluptatum explicabo animi consectetur.
-                            </p>
-                        </div>
-                    </div>                    
-                </div>
+  </div>
+  <!-- Menu -->
+  <div class="container column" id="menu">
+    <div style="margin: 10px;">
+      <div class="container column dark" style="align-items:center">
+        <h1 class="title">Nos burgers</h1>
+        <h2 class="subtitle">+3$ pour des frites et un soda</h3>
+      </div>
+      <div class="container row" style="flex-wrap:wrap">
+        <!-- Hamburger -->
+        <div class="card" id="burger1">
+          <div class="card-inner">
+            <div class="card-back">
+              <div style="margin: 10%;">
+                <h3>North Burger</h3>
+                <p>Price: 9$</p>
+                <p>Ingredients:</p>
+                <ul>
+                  <li>
+                    <p>Lean ground beef</p>
+                  </li>
+                  <li>
+                    <p>Letuce</p>
+                  </li>
+                  <li>
+                    <p>North burger sauce</p>
+                  </li>
+                  <li>
+                    <p>Onions</p>
+                  </li>
+                </ul>
+              </div>
             </div>
-        </div>
-        <!-- Menu -->
-        <div class="container column" id="menu">
-            <div style="margin: 10px;">
-                <div class="container column dark" style="align-items:center">
-                    <h1 class="title">Nos burgers</h1>
-                    <h2 class="subtitle">+3$ pour des frites et un soda</h3>
-                </div>
-                <div class="container row" style="flex-wrap:wrap">
-                    <!-- Hamburger -->
-                    <div class="card" id="burger1">
-                        <div class="card-inner">
-                            <div class="card-back">
-                                <div style="margin: 10%;">
-                                    <h3>North Burger</h3>
-                                    <p>Price: 9$</p>
-                                    <p>Ingredients:</p>
-                                    <ul>
-                                        <li><p>Lean ground beef</p></li>
-                                        <li><p>Letuce</p></li>
-                                        <li><p>North burger sauce</p></li>
-                                        <li><p>Onions</p></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="card-front">
-                                <div class="card-image">
-                                    <img src="https://raw.githubusercontent.com/LazyKeru/GLO-3102/main/laboratoire1/img/hamburger.png" alt="burger" style="width:100%;">
-                                </div>
-                                <h3>North Burger</h3>
-                                <p>Price: 9$</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Cheeseburger -->
-                    <div class="card" id="burger2">
-                        <div class="card-inner">
-                            <div class="card-back">
-                                <div style="margin: 10%;">
-                                    <h3>Cheesy Burger</h3>
-                                    <p>Price: 10$</p>
-                                    <p>Ingredients:</p>
-                                    <ul>
-                                        <li><p>Lean ground beef</p></li>
-                                        <li><p>Letuce</p></li>
-                                        <li><p>North burger sauce</p></li>
-                                        <li><p>Onions</p></li>
-                                        <li><p>Cheese</p></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="card-front">
-                                <div class="card-image">
-                                    <img src="https://raw.githubusercontent.com/LazyKeru/GLO-3102/main/laboratoire1/img/cheeseburger.png" alt="burger" style="width:100%;">
-                                </div>
-                                <h3>Cheesy Burger</h3>
-                                <p>Price: 10$</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Fishburger -->
-                    <div class="card" id="burger3">
-                        <div class="card-inner">
-                            <div class="card-back">
-                                <div style="margin: 10%;">
-                                    <h3>Antartic Burger</h3>
-                                    <p>Price: 8$</p>
-                                    <p>Ingredients:</p>
-                                    <ul>
-                                        <li><p>Lean ground beef</p></li>
-                                        <li><p>Letuce</p></li>
-                                        <li><p>North burger sauce</p></li>
-                                        <li><p>Onions</p></li>
-                                        <li><p>Cheese</p></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="card-front">
-                                <div class="card-image">
-                                    <img src="https://raw.githubusercontent.com/LazyKeru/GLO-3102/main/laboratoire1/img/fishburger.png" alt="burger" style="width:100%;">
-                                </div>
-                                <h3>Antartic Burger</h3>
-                                <p>Price: 8$</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Chickenburger -->
-                    <div class="card" id="burger4">
-                        <div class="card-inner">
-                            <div class="card-back">
-                                <div style="margin: 10%;">
-                                    <h3>Burger de poulet</h3>
-                                    <p>Price: 9$</p>
-                                    <p>Ingredients:</p>
-                                    <ul>
-                                        <li><p>Lean ground beef</p></li>
-                                        <li><p>Letuce</p></li>
-                                        <li><p>North burger sauce</p></li>
-                                        <li><p>Onions</p></li>
-                                        <li><p>Cheese</p></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="card-front">
-                                <div class="card-image">
-                                    <img src="https://raw.githubusercontent.com/LazyKeru/GLO-3102/main/laboratoire1/img/chickenburger.png" alt="burger" style="width:100%;">
-                                </div>
-                                <h3>Burger de poulet</h3>
-                                <p>Price: 9$</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Veggieburger -->
-                    <div class="card" id="burger5">
-                        <div class="card-inner">
-                            <div class="card-back">
-                                <div style="margin: 10%;">
-                                    <h3>Burger de la nature</h3>
-                                    <p>Price: 9$</p>
-                                    <p>Ingredients:</p>
-                                    <ul>
-                                        <li><p>Lean ground beef</p></li>
-                                        <li><p>Letuce</p></li>
-                                        <li><p>North burger sauce</p></li>
-                                        <li><p>Onions</p></li>
-                                        <li><p>Cheese</p></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="card-front">
-                                <div class="card-image">
-                                    <img src="https://raw.githubusercontent.com/LazyKeru/GLO-3102/main/laboratoire1/img/veggieburger.png" alt="burger" style="width:100%;">
-                                </div>
-                                <h3>Burger de la nature</h3>
-                                <p>Price: 9$</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Bigburger -->
-                    <div class="card" id="burger6">
-                        <div class="card-inner">
-                            <div class="card-back">
-                                <div style="margin: 10%;">
-                                    <h3>Burger de la faim</h3>
-                                    <p>Price: 12$</p>
-                                    <p>Ingredients:</p>
-                                    <ul>
-                                        <li><p>Lean ground beef</p></li>
-                                        <li><p>Letuce</p></li>
-                                        <li><p>North burger sauce</p></li>
-                                        <li><p>Onions</p></li>
-                                        <li><p>Cheese</p></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="card-front">
-                                <div class="card-image">
-                                    <img src="https://raw.githubusercontent.com/LazyKeru/GLO-3102/main/laboratoire1/img/bigburger.png" alt="burger" style="width:100%;">
-                                </div>
-                                <h3>Burger de la faim</h3>
-                                <p>Price: 12$</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="card-front">
+              <div class="card-image">
+                <img src="https://raw.githubusercontent.com/LazyKeru/GLO-3102/main/laboratoire1/img/hamburger.png"
+                  alt="burger" style="width:100%;">
+              </div>
+              <h3>North Burger</h3>
+              <p>Price: 9$</p>
             </div>
+          </div>
         </div>
-        <!-- Order -->
-        <div class="container column" id="order">
-            <div id="order-img-background">
-                <div id="order-gradient-background">
-                    <div class="container column" style="padding: 1rem;">
-                        <div class="container column" style="align-items:center">
-                            <h1 class="title">Order</h1>
-                            <h2 class="subtitle">Livraison en 30 minutes, ou remboursement</h3>
-                        </div>
-                        <div class="container row">
-                            <div class="container column">
-                                <h3>Livraison Uber Eat</h3>
-                                <a href="order.html">
-                                    <div class="ubermanger-outside">
-                                        <div class="ubermanger-inner">
-                                            <h5>Commandez en ligne avec</h5>
-                                            <h2>Uber<b>Manger</b></h2>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="container column">
-                                <h3>Appel</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!-- Cheeseburger -->
+        <div class="card" id="burger2">
+          <div class="card-inner">
+            <div class="card-back">
+              <div style="margin: 10%;">
+                <h3>Cheesy Burger</h3>
+                <p>Price: 10$</p>
+                <p>Ingredients:</p>
+                <ul>
+                  <li>
+                    <p>Lean ground beef</p>
+                  </li>
+                  <li>
+                    <p>Letuce</p>
+                  </li>
+                  <li>
+                    <p>North burger sauce</p>
+                  </li>
+                  <li>
+                    <p>Onions</p>
+                  </li>
+                  <li>
+                    <p>Cheese</p>
+                  </li>
+                </ul>
+              </div>
             </div>
-        </div>
-        <!-- About -->
-        <div id="about">
-            <div class="container column" style="padding-top: 1rem; padding-bottom: 2rem;">
-                <div class="container column dark" style="align-items:center">
-                    <h1 class="title">About Us</h1>
-                    <h2 class="subtitle">Une petite équipe bien efficace</h3>
-                </div>
-                <div class="container row">
-                    <div class="users-outer" style="margin-left: 5%; margin-right: 5%;">
-                        <div class="users-inner">
-                            <div class="container column">
-                                <h2>Alexis AOUN</h2>
-                                <h3>Manager</h3>
-                            </div>
-                            <div class="container row">
-                                <div class="profile">
-                                    <a href="https://github.com/AlexisAoun">
-                                        <div class="profile-frame" style="flex: 1;">
-                                            <img src="https://avatars.githubusercontent.com/u/72801475" alt="github-photo"  class="profile-photo">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div style="flex: 1;">
-                                    <p>
-                                        Computer engineering student at Institut Mines-Télécom Nord Europe.
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, ad nobis? Est, libero totam? Officiis laborum rerum odit quaerat vero dolore labore alias exercitationem! Quas dignissimos quia nobis adipisci sapiente.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="users-outer" style="margin-left: 5%; margin-right: 5%;">
-                        <div class="users-inner">
-                            <div class="container column">
-                                <h2>Killian ALLAIRE</h2>
-                                <h3>Cuisto</h3>
-                            </div>
-                            <div class="container row">
-                                <div class="profile">
-                                    <a href="https://github.com/LazyKeru">
-                                        <div class="profile-frame" style="flex: 1;">
-                                            <img src="https://avatars.githubusercontent.com/u/26745413" alt="github-photo" class="profile-photo">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div  style="flex: 1;">
-                                    <p>
-                                        Computer engineering student at Institut Mines-Télécom Nord Europe.
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi iusto dolore, debitis ipsa officia illum velit repudiandae quasi asperiores, iste molestias deleniti facere enim! Aliquam maiores fuga magnam labore sapiente.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="card-front">
+              <div class="card-image">
+                <img src="https://raw.githubusercontent.com/LazyKeru/GLO-3102/main/laboratoire1/img/cheeseburger.png"
+                  alt="burger" style="width:100%;">
+              </div>
+              <h3>Cheesy Burger</h3>
+              <p>Price: 10$</p>
             </div>
+          </div>
         </div>
-    </body>
+        <!-- Fishburger -->
+        <div class="card" id="burger3">
+          <div class="card-inner">
+            <div class="card-back">
+              <div style="margin: 10%;">
+                <h3>Antartic Burger</h3>
+                <p>Price: 8$</p>
+                <p>Ingredients:</p>
+                <ul>
+                  <li>
+                    <p>Lean ground beef</p>
+                  </li>
+                  <li>
+                    <p>Letuce</p>
+                  </li>
+                  <li>
+                    <p>North burger sauce</p>
+                  </li>
+                  <li>
+                    <p>Onions</p>
+                  </li>
+                  <li>
+                    <p>Cheese</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-front">
+              <div class="card-image">
+                <img src="https://raw.githubusercontent.com/LazyKeru/GLO-3102/main/laboratoire1/img/fishburger.png"
+                  alt="burger" style="width:100%;">
+              </div>
+              <h3>Antartic Burger</h3>
+              <p>Price: 8$</p>
+            </div>
+          </div>
+        </div>
+        <!-- Chickenburger -->
+        <div class="card" id="burger4">
+          <div class="card-inner">
+            <div class="card-back">
+              <div style="margin: 10%;">
+                <h3>Burger de poulet</h3>
+                <p>Price: 9$</p>
+                <p>Ingredients:</p>
+                <ul>
+                  <li>
+                    <p>Lean ground beef</p>
+                  </li>
+                  <li>
+                    <p>Letuce</p>
+                  </li>
+                  <li>
+                    <p>North burger sauce</p>
+                  </li>
+                  <li>
+                    <p>Onions</p>
+                  </li>
+                  <li>
+                    <p>Cheese</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-front">
+              <div class="card-image">
+                <img src="https://raw.githubusercontent.com/LazyKeru/GLO-3102/main/laboratoire1/img/chickenburger.png"
+                  alt="burger" style="width:100%;">
+              </div>
+              <h3>Burger de poulet</h3>
+              <p>Price: 9$</p>
+            </div>
+          </div>
+        </div>
+        <!-- Veggieburger -->
+        <div class="card" id="burger5">
+          <div class="card-inner">
+            <div class="card-back">
+              <div style="margin: 10%;">
+                <h3>Burger de la nature</h3>
+                <p>Price: 9$</p>
+                <p>Ingredients:</p>
+                <ul>
+                  <li>
+                    <p>Lean ground beef</p>
+                  </li>
+                  <li>
+                    <p>Letuce</p>
+                  </li>
+                  <li>
+                    <p>North burger sauce</p>
+                  </li>
+                  <li>
+                    <p>Onions</p>
+                  </li>
+                  <li>
+                    <p>Cheese</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-front">
+              <div class="card-image">
+                <img src="https://raw.githubusercontent.com/LazyKeru/GLO-3102/main/laboratoire1/img/veggieburger.png"
+                  alt="burger" style="width:100%;">
+              </div>
+              <h3>Burger de la nature</h3>
+              <p>Price: 9$</p>
+            </div>
+          </div>
+        </div>
+        <!-- Bigburger -->
+        <div class="card" id="burger6">
+          <div class="card-inner">
+            <div class="card-back">
+              <div style="margin: 10%;">
+                <h3>Burger de la faim</h3>
+                <p>Price: 12$</p>
+                <p>Ingredients:</p>
+                <ul>
+                  <li>
+                    <p>Lean ground beef</p>
+                  </li>
+                  <li>
+                    <p>Letuce</p>
+                  </li>
+                  <li>
+                    <p>North burger sauce</p>
+                  </li>
+                  <li>
+                    <p>Onions</p>
+                  </li>
+                  <li>
+                    <p>Cheese</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-front">
+              <div class="card-image">
+                <img src="https://raw.githubusercontent.com/LazyKeru/GLO-3102/main/laboratoire1/img/bigburger.png"
+                  alt="burger" style="width:100%;">
+              </div>
+              <h3>Burger de la faim</h3>
+              <p>Price: 12$</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Order -->
+  <div class="container column" id="order">
+    <div id="order-img-background">
+      <div id="order-gradient-background">
+        <div class="container column" style="padding: 1rem;">
+          <div class="container column" style="align-items:center">
+            <h1 class="title">Order</h1>
+            <h2 class="subtitle">Livraison en 30 minutes, ou remboursement</h3>
+          </div>
+          <div class="order-contact-container">
+            <div class="container column">
+              <h3 class="subtitle">Livraison Uber Eat</h3>
+              <a href="order.html">
+                <div class="ubermanger-outside">
+                  <div class="ubermanger-inner">
+                    <h5>Commandez en ligne avec</h5>
+                    <h2>Uber<b>Manger</b></h2>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="container column">
+              <h3 class="subtitle">Appel</h3>
+              <div class="order-phone-number">
+                +33 00 00 00 00
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- About -->
+  <div id="about">
+    <div class="container column" style="padding-top: 1rem; padding-bottom: 2rem;">
+      <div class="container column dark" style="align-items:center">
+        <h1 class="title">About Us</h1>
+        <h2 class="subtitle">Une petite équipe bien efficace</h3>
+      </div>
+      <div class="about-us-container">
+        <div class="users-outer">
+          <div class="users-inner">
+            <div class="users-title">
+              <h2>Alexis AOUN</h2>
+              <h3>Manager</h3>
+            </div>
+            <div class="profile-container">
+              <div class="profile">
+                <div class="profile-frame">
+                  <a href="https://github.com/AlexisAoun">
+                    <img src="https://avatars.githubusercontent.com/u/72801475" alt="github-photo"
+                      class="profile-photo">
+                  </a>
+                </div>
+              </div>
+              <div class="profile-description">
+                <p>
+                  Computer engineering student at Institut Mines-Télécom Nord Europe.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, ad nobis? Est, libero totam? Officiis
+                  laborum rerum odit quaerat vero dolore labore alias exercitationem! Quas dignissimos quia nobis
+                  adipisci sapiente.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="users-outer">
+          <div class="users-inner">
+            <div class="users-title">
+              <h2>Killian ALLAIRE</h2>
+              <h3>Cuisto</h3>
+            </div>
+            <div class="profile-container">
+              <div class="profile">
+                <a href="https://github.com/LazyKeru">
+                  <div class="profile-frame">
+                    <img src="https://avatars.githubusercontent.com/u/26745413" alt="github-photo"
+                      class="profile-photo">
+                  </div>
+                </a>
+              </div>
+              <div class="profile-description">
+                <p>
+                  Computer engineering student at Institut Mines-Télécom Nord Europe.
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi iusto dolore, debitis ipsa officia
+                  illum velit repudiandae quasi asperiores, iste molestias deleniti facere enim! Aliquam maiores fuga
+                  magnam labore sapiente.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
