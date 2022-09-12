@@ -2,11 +2,13 @@
 
 Un site HTML et CSS exposant le menu d'un restaurant fictif
 
+Ouvrez index.html avec un navigateur web.
+
 ## Required :
 
-- Responsive
-- Plusieurs photos
-- HTML et CSS seulement
-- Barre de navigation
-- paragraphe associé aux images
-- faux bouton pour commander
+- [X] Responsive
+- [X] Plusieurs photos
+- [X] HTML et CSS seulement
+- [X] Barre de navigation
+- [X] paragraphe associé aux images
+- [X] faux bouton pour commander
