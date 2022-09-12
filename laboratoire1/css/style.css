@@ -1,0 +1,48 @@
+:root {
+    --darkblue: #050A30;
+    --blue: #143C72;
+    --lightblue: #B1D4E0;
+    --whiteblue: #F4F6FC;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    background-color: var(--whiteblue);
+    width: 100%;
+    margin:0;
+    padding:0;
+    font-family: Arial, Gadget, sans-serif;
+}
+
+.title {
+    color: var(--blue);
+}
+
+.subtitle {
+    color: var(--darkblue);
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.dark h1{
+    color: var(--lightblue);
+}
+
+.dark h2{
+    color: var(--whiteblue);
+}
+

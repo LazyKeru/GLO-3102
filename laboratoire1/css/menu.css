@@ -5,7 +5,13 @@
     --whiteblue: #F4F6FC;
 }
 
-/* Menu Card */
+#menu{
+    background-color: var(--darkblue);
+    width: 100%;
+    height: 100%;
+}
+
+/* Menu cards */
 .card {
     margin: 2rem;
     background-color: transparent;
@@ -41,6 +47,7 @@
     text-align: left;
     transition: opacity 0.5s;
     opacity: 0;
+    overflow: visible;
 }
 
 /* Position the front and back side */
