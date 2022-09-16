@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Include the external stylesheets -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="search-bar">
+            <div class="search-bar-inner">
+                <div class="search-bar-logo-container">
+                    <img src="img/logo.png" alt="Mousse" class="search-bar-logo">
+                </div>
+                <div class="search-bar-select-container">
+                    <div>
+                        <input id="inputedText" name="myBrowser" placeholder="Search..."/>
+                        <ul id="beers">
+                            <li class="unknown">Unknown beer</li>
+                            <li class="beer" value="guiness">Guiness</li>
+                            <li class="beer" value="leff">Leff</li>
+                            <li class="beer" value="bud">Bud</li>
+                        </ul>
+                    </div>
+                    <div id="clearButton" class="search-bar-clear" onclick="clear()">
+                        <h1>
+                            X
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <!-- Include the external javascript -->
+    <script src="script.js"></script>
+</html>
