@@ -1,6 +1,5 @@
 let updateList = ()=>{
     elements = document.getElementById("beers").getElementsByClassName("beer");
-    console.log("Elements:" + elements);
     for(i=0; i < elements.length; i++){
         inputedText = document.getElementById("inputedText").value.toUpperCase();
         element = elements[i].innerText.toUpperCase();
@@ -35,27 +34,30 @@ let showdropdown = () => {
 
 let hidedropdown = () => document.getElementById("beers").style.display = "none";
 
+let onbeerclick = (e) =>{
+    document.getElementById("inputedText").value = e.innerText;
+    hidedropdown();
+}
+
 document.getElementById("inputedText").onclick = ()=>{
     showdropdown();
 }
 
-onbeerclick = (element) =>{
-    document.getElementById("inputedText").value = element.innerText;
-    console.log(element.innerText);
-    hidedropdown();
+document.getElementById("inputedText").onfocus = ()=>{
+    showdropdown();
 }
 
-
+document.getElementById("inputedText").onblur = ()=>{
+    
+}
 
 document.getElementById("clearButton").onclick = ()=>{
     document.getElementById("inputedText").value = "";
-    updateList;
+    blur();
+    updateList();
+    hidedropdown();
 };
 
 document.getElementById("inputedText").onkeyup = updateList;
-
-
-
-
 
 // source : https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_filter_list

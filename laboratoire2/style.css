@@ -48,3 +48,17 @@
     color: var(--third-color);
     background-color: var(--secondary-color);
 }
+
+#beers{
+    background-color: var(--secondary-color);
+    position: absolute;
+    box-shadow:var(--third-color) 5px 5px 5px;
+    list-style: none;
+    padding: 0;
+    overflow-y: scroll;
+    max-height: 50%;
+}
+
+.beer:hover{
+    background-color: var(--main-color);
+}
