@@ -10,9 +10,18 @@
                 <div class="search-bar-logo-container">
                     <img src="img/logo.png" alt="Mousse" class="search-bar-logo">
                 </div>
-                <div class="search-bar-select-container">
-                    <div>
-                        <input id="inputedText" name="myBrowser" placeholder="Search..."/>
+                <div class="search-bar-select-container" id="search-bar-select-container">
+                    <div class="search-bar-select-container-top">
+                        <div>
+                            <input id="inputedText" name="myBrowser" placeholder="Search..."/>
+                        </div>
+                        <div id="clearButton" class="search-bar-clear" onclick="clear()">
+                            <h1>
+                                X
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="search-bar-select-container-bottom">
                         <ul id="beers" style="display: none;">
                             <li class="unknown" value="Unknown beer" style="display: none;" >Unknown beer</li>
                             <li class="beer" onclick="onbeerclick(this)">Avery Salvation</li>
@@ -51,12 +60,8 @@
                             <li class="beer" onclick="onbeerclick(this)">Zywiec Beer</li>
                         </ul>
                     </div>
-                    <div id="clearButton" class="search-bar-clear" onclick="clear()">
-                        <h1>
-                            X
-                        </h1>
-                    </div>
                 </div>
+
             </div>
         </div>
     </body>

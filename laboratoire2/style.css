@@ -27,6 +27,18 @@
 .search-bar-select-container{
     display: flex;
     flex: 3;
+    flex-direction: column;
+}
+
+.search-bar-select-container-top{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.search-bar-select-container-bottom{
+    display: flex;
+    flex-direction: column;
 }
 
 .search-bar-logo{

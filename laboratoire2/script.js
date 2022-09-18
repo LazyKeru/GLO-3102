@@ -39,17 +39,9 @@ let onbeerclick = (e) =>{
     hidedropdown();
 }
 
-document.getElementById("inputedText").onclick = ()=>{
-    showdropdown();
-}
+document.getElementById("inputedText").onclick = ()=> showdropdown();
 
-document.getElementById("inputedText").onfocus = ()=>{
-    showdropdown();
-}
-
-document.getElementById("inputedText").onblur = ()=>{
-    
-}
+document.getElementById("inputedText").onfocus = ()=> showdropdown();
 
 document.getElementById("clearButton").onclick = ()=>{
     document.getElementById("inputedText").value = "";
