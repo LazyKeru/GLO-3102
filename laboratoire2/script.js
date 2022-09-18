@@ -26,6 +26,27 @@ let updateList = ()=>{
     }
 };
 
+let showdropdown = () => {
+    if(document.getElementById("inputedText").value != ""){
+        updateList();
+    }
+    document.getElementById("beers").style.display = "";
+}
+
+let hidedropdown = () => document.getElementById("beers").style.display = "none";
+
+document.getElementById("inputedText").onclick = ()=>{
+    showdropdown();
+}
+
+onbeerclick = (element) =>{
+    document.getElementById("inputedText").value = element.innerText;
+    console.log(element.innerText);
+    hidedropdown();
+}
+
+
+
 document.getElementById("clearButton").onclick = ()=>{
     document.getElementById("inputedText").value = "";
     updateList;

@@ -10,4 +10,5 @@ Un composant de dropdown search en JavaScript pur. Exemples: https://select2.git
     - [ ] X to reset the search
 
 - NO results necessary
-- NO framework need to be used 
+- NO framework need to be used
+- only js, html and css 
