@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Include the external stylesheets -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="search-bar">
+            <div class="search-bar-inner">
+                <div class="search-bar-logo-container">
+                    <img src="img/logo.png" alt="Mousse" class="search-bar-logo">
+                </div>
+                <div class="search-bar-select-container" id="search-bar-select-container">
+                    <div class="search-bar-select-container-top">
+                        <div>
+                            <input id="inputedText" name="myBrowser" placeholder="Search..."/>
+                        </div>
+                        <div id="clearButton" class="search-bar-clear" onclick="clear()">
+                            <h1>
+                                X
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="search-bar-select-container-bottom">
+                        <ul id="beers" style="display: none;">
+                            <li class="unknown" value="Unknown beer" style="display: none;" >Unknown beer</li>
+                            <li class="beer" onclick="onbeerclick(this)">Avery Salvation</li>
+                            <li class="beer" onclick="onbeerclick(this)">Ballantine Ale</li>
+                            <li class="beer" onclick="onbeerclick(this)">Coors</li>
+                            <li class="beer" onclick="onbeerclick(this)">Corona</li>
+                            <li class="beer" onclick="onbeerclick(this)">Duvel</li>
+                            <li class="beer" onclick="onbeerclick(this)">Edelweiss</li>
+                            <li class="beer" onclick="onbeerclick(this)">Fuller</li>
+                            <li class="beer" onclick="onbeerclick(this)">Golden</li>
+                            <li class="beer" onclick="onbeerclick(this)">Guinness</li>
+                            <li class="beer" onclick="onbeerclick(this)">Harpoon</li>
+                            <li class="beer" onclick="onbeerclick(this)">Ipswich</li>
+                            <li class="beer" onclick="onbeerclick(this)">Jenlain</li>
+                            <li class="beer" onclick="onbeerclick(this)">Keller</li>
+                            <li class="beer" onclick="onbeerclick(this)">Koningshoeven </li>
+                            <li class="beer" onclick="onbeerclick(this)">La Chouffe</li>
+                            <li class="beer" onclick="onbeerclick(this)">Leinenkugel’s</li>
+                            <li class="beer" onclick="onbeerclick(this)">Mendocino</li>
+                            <li class="beer" onclick="onbeerclick(this)">Miller</li>
+                            <li class="beer" onclick="onbeerclick(this)">Northumberland</li>
+                            <li class="beer" onclick="onbeerclick(this)">Nostradamus</li>
+                            <li class="beer" onclick="onbeerclick(this)">Old Devil</li>
+                            <li class="beer" onclick="onbeerclick(this)">Orval</li>
+                            <li class="beer" onclick="onbeerclick(this)">Piraat</li>
+                            <li class="beer" onclick="onbeerclick(this)">Rogue</li>
+                            <li class="beer" onclick="onbeerclick(this)">Sleeman</li>
+                            <li class="beer" onclick="onbeerclick(this)">Terrapin</li>
+                            <li class="beer" onclick="onbeerclick(this)">Uerige Sticke</li>
+                            <li class="beer" onclick="onbeerclick(this)">Ursus Premium</li>
+                            <li class="beer" onclick="onbeerclick(this)">Victoria Bitter</li>
+                            <li class="beer" onclick="onbeerclick(this)">Weihenstephaner</li>
+                            <li class="beer" onclick="onbeerclick(this)">XXXX Bitter</li>
+                            <li class="beer" onclick="onbeerclick(this)">Young’s Old Nick</li>
+                            <li class="beer" onclick="onbeerclick(this)">Ziegenbock</li>
+                            <li class="beer" onclick="onbeerclick(this)">Zywiec Beer</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </body>
+    <!-- Include the external javascript -->
+    <script src="script.js"></script>
+</html>
