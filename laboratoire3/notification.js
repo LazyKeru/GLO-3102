@@ -17,7 +17,6 @@ export class Notification {
     deleteNotification = () => {
         let fade = setInterval(
             ()=>{
-                console.log(this.element.style.opacity);
                 if (this.element.style.opacity <= 0.05) {
                     this.element.remove();
                     clearInterval(fade);
