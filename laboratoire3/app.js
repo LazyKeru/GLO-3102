@@ -1,3 +1,10 @@
-import {hello} from './hello.js';
+import {Notification} from './notification.js';
 
-hello();
+window.testalert = (e) => {
+    let newNotification = new Notification(
+        e.id, 
+        window.document.getElementById("message").value,
+        );
+    
+    newNotification.createNotification(window.document.getElementById("notifications"));
+}
