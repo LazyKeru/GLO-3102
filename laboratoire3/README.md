@@ -23,13 +23,13 @@ http-server
 ## Required :
 
 - Notification :
-    - [ ] erreur
-    - [ ] succès
-    - [ ] info
-    - [ ] vanish after time
-    - [ ] se stack
+    - [X] erreur
+    - [X] succès
+    - [X] info
+    - [X] vanish after time
+    - [X] se stack
 - Demo :
-    - [ ] texte avec bouton pour afficher les notifications
+    - [X] texte avec bouton pour afficher les notifications
 
 - ES6 maximum
 - no framework
