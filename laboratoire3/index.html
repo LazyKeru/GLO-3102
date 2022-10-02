@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+    <link rel="icon" href="#">
+    <script type="module" src="./app.js"></script>
+</head>
+<body>
+    <div id="notifications" style="position:absolute; display: flex; flex-direction: column-reverse;">
+    </div>
+    <div style="display: flex;flex-direction: row; justify-content: center;padding: 1vh;">
+        <p>message : </p>
+        <input id="message" type="text"/>
+    </div>
+    <div style="display: flex;flex-direction: row; justify-content: space-around;padding: 1vh;"> 
+        <button id="error" onclick="testalert(this)">error</button>
+        <button id="success" onclick="testalert(this)">success</button>
+        <button id="information" onclick="testalert(this)">information</button>
+    </div>
+</body>
