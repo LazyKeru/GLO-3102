@@ -1,52 +1,59 @@
 const baseUrl = 'https://glo3102lab4.herokuapp.com'
 
-const createUser = async () => {
-  const res = await fetch(baseUrl + '/users', {
-    method: 'POST',
-  }).then((res) => (res.status === 200 ? res.json() : false))
-
-  return res.id
+const checkStatus = (response) => {
+  if(!response.ok)
+    throw new Error(response.status + ": " + response.statusText)
+  return response
 }
 
-const getAllTasks = async (userId) => {
-  const res = await fetch(baseUrl + '/' + userId + '/tasks', {
-    method: 'GET',
-  }).then((res) => (res.status === 200 ? res.json() : false))
-  return res.tasks
-}
+let createUser = await fetch(baseUrl + '/users', {
+      method: 'POST',
+    })
+    .then(checkStatus)
+    .then(response => response.json())
+    .then(data => data.id)
+    .catch(error => console.error(error))
 
-const addTask = async (userId, noteName) => {
-  const note = {name: noteName}
-  const res = await fetch(baseUrl + '/' + userId + '/tasks', {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(note),
-  }).then((res) => (res.status === 200 ? res.json() : false))
-  return res
-}
+const getAllTasks = async (userId) => await fetch(baseUrl + '/' + userId + '/tasks', {
+      method: 'GET',
+    })
+    .then(checkStatus)
+    .then(response => response.json())
+    .then(data => data.tasks)
+    .catch(error => console.error(error))
 
-const updateTask = async (userId, noteId, newNoteName) => {
-  const newNote = {name: newNoteName}
-  const res = await fetch(baseUrl + '/' + userId + '/tasks/' + noteId, {
-    method: 'PUT',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(newNote),
-  }).then((res) => (res.status === 200 ? res.json() : false))
-  return res
-}
+const addTask = async (userId, noteName) => await fetch(baseUrl + '/' + userId + '/tasks', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({name: noteName}),
+    })
+    .then(checkStatus)
+    .then(response => response.json())
+    .then(data => data)
+    .catch(error => console.error(error))
+
+const updateTask = async (userId, noteId, newNoteName) => await fetch(baseUrl + '/' + userId + '/tasks/' + noteId, {
+      method: 'PUT',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({name: newNoteName}),
+    })
+    .then(checkStatus)
+    .then(response => response.json())
+    .then(data => data)
+    .catch(error => console.error(error))
 
 //returns true if deleted succesfully false otherwise
-const deleteTask = async (userId, noteId) => {
-  const res = await fetch(baseUrl + '/' + userId + '/tasks/' + noteId, {
-    method: 'DELETE',
-  }).then((res) => (res.status === 204 || res.status === 200 ? true : false))
-  return res
-}
+const deleteTask = async (userId, noteId) => await fetch(baseUrl + '/' + userId + '/tasks/' + noteId, {
+      method: 'DELETE',
+    })
+    .then(checkStatus)
+    .then(() => true)
+    .catch(error => console.error(error))
 
 export { createUser, addTask, getAllTasks, updateTask, deleteTask }

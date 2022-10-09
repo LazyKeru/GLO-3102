@@ -4,7 +4,7 @@ let userId = null
 let updatingTask = null
 
 const createUser = async () => {
-  const user = await api.createUser()
+  const user = await api.createUser
   if (!user) {
     alert("Une erreur s'est produite - erreur API createUser")
   } else {
