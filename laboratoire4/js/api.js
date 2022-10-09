@@ -12,10 +12,11 @@ const getAllTasks = async (userId) => {
   const res = await fetch(baseUrl + '/' + userId + '/tasks', {
     method: 'GET',
   }).then((res) => (res.status === 200 ? res.json() : false))
-  return res
+  return res.tasks
 }
 
-const addTask = async (userId, note) => {
+const addTask = async (userId, noteName) => {
+  const note = {name: noteName}
   const res = await fetch(baseUrl + '/' + userId + '/tasks', {
     method: 'POST',
     headers: {
@@ -27,7 +28,8 @@ const addTask = async (userId, note) => {
   return res
 }
 
-const updateTask = async (userId, noteId, newNote) => {
+const updateTask = async (userId, noteId, newNoteName) => {
+  const newNote = {name: newNoteName}
   const res = await fetch(baseUrl + '/' + userId + '/tasks/' + noteId, {
     method: 'PUT',
     headers: {
