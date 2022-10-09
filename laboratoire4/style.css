@@ -1,0 +1,21 @@
+#createTask {
+  display: none;
+}
+
+#taskListContainer {
+  display: none;
+}
+
+#createTask-noNameError {
+  display: none;
+  color: red;
+}
+
+#updateTask-noNameError {
+  display: none;
+  color: red;
+}
+
+#updateTask {
+  display: none;
+}

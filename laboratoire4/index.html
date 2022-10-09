@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TODO app</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="style.css" rel="stylesheet" />
+    <script type="module" src="./js/index.js"></script>
+  </head>
+  <body>
+    <h1 class="mainTitle">La TODO app de Aoun et Kiki</h1>
+
+    <div id="createUser">
+      <h2 class="subtitle">
+        Avant de commencer vous devez créer votre compte
+      </h2>
+      <button class="btn" id="createUser-btn">Créer mon compte !</button>
+    </div>
+
+    <div id="createTask">
+      <h2 class="subtitle">Création d'une tâche</h2>
+      <label for="createTask-input">Le nom de la tâche (Obligatoire)</label>
+      <input type="text" id="createTask-input" name="createTask-input"/>
+      <p id="createTask-noNameError">Vous devez rentrer un nom valide ! (au moins un charactère autre que des espaces)</p>
+      <button class="btn" id="createTask-input-btn"">Créer la tâche</button>
+    </div>
+
+    <div id="updateTask">
+      <h2 class="subtitle">Mettre à jour la tâche</h2>
+      <label for="updateTask-input">Le nom de la tâche (Obligatoire)</label>
+      <input type="text" id="updateTask-input" name="updateTask-input"/>
+      <p id="updateTask-noNameError">Vous devez rentrer un nom valide ! (au moins un charactère autre que des espaces)</p>
+      <button class="btn" id="updateTask-input-btn">Mettre à jour</button>
+    </div>
+
+    <div id="taskListContainer">
+      <h2 class="subtitle">Ma liste de tâche</h2>
+      <ul id="taskList"></ul>
+    </div>
+
+  </body>
+</html>
