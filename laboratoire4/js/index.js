@@ -57,6 +57,8 @@ const updateTask = async () => {
       switchToConnectedView()
       generateTaskList()
       updateInput.value = ''
+    } else {
+      alert("Une erreur s'est produite - erreur API updateTask")
     }
   }
 }
@@ -122,7 +124,8 @@ const getTaskName = async (id) => {
     })
     return name
   } else {
-    return false
+    alert("Une erreur s'est produite - erreur API getAllTasks dans getTaskName")
+    return "erreur"
   }
 }
 
@@ -160,30 +163,6 @@ const switchToUpdateTaskView = async () => {
   disableStyleAllTasks()
 }
 
-const displayCreateNoNameError = () => {
-  const error = document.getElementById('createTask-noNameError')
-
-  error.style.display = 'inherit'
-}
-
-const hideCreateNoNameError = () => {
-  const error = document.getElementById('createTask-noNameError')
-
-  error.style.display = 'none'
-}
-
-const displayUpdateNoNameError = () => {
-  const error = document.getElementById('updateTask-noNameError')
-
-  error.style.display = 'inherit'
-}
-
-const hideUpdateNoNameError = () => {
-  const error = document.getElementById('updateTask-noNameError')
-
-  error.style.display = 'none'
-}
-
 const disableStyleTask = (id) => {
   const parentLi = document.getElementById(id)
   const btn = parentLi.querySelector('.updateBtn')
@@ -212,6 +191,30 @@ const enableStyleAllTasks = () => {
   const tasks = document.getElementsByClassName('taskCheckbox')
 
   Array.from(tasks).forEach((task) => enableStyleTask(task.parentElement.id))
+}
+
+const displayCreateNoNameError = () => {
+  const error = document.getElementById('createTask-noNameError')
+
+  error.style.display = 'inherit'
+}
+
+const hideCreateNoNameError = () => {
+  const error = document.getElementById('createTask-noNameError')
+
+  error.style.display = 'none'
+}
+
+const displayUpdateNoNameError = () => {
+  const error = document.getElementById('updateTask-noNameError')
+
+  error.style.display = 'inherit'
+}
+
+const hideUpdateNoNameError = () => {
+  const error = document.getElementById('updateTask-noNameError')
+
+  error.style.display = 'none'
 }
 
 //listeners
