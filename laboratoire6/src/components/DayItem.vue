@@ -1,19 +1,35 @@
+<script>
+export default {
+  name: "DayItem",
+  props: {
+    dayTime: {
+      type: String,
+      required: true,
+      // validator: (value) => {
+      //   return value >= 0
+      // }
+    },
+    tempeture: {
+      type: String,
+      required: true,
+      // validator: (value) => {
+      //   return value >= 0
+      // }
+    }
+  }
+}
+</script>
+
 <template>
-  <div class="item">
-    <i>
-      <slot name="icon"></slot>
-    </i>
-    <div class="details">
-      <h3>
-        <slot name="heading"></slot>
-      </h3>
-      <slot></slot>
-    </div>
+  <div class="day">
+    <h3 class="weekday">{{dayTime}}</h3>
+    <img src="" alt=""/>
+    <h3 class="tempeture">{{tempeture}}</h3>
   </div>
 </template>
 
-<style scoped>
-.item {
+<style>
+/* .item {
   margin-top: 2rem;
   display: flex;
 }
@@ -82,5 +98,5 @@ h3 {
   .item:last-of-type:after {
     display: none;
   }
-}
+} */
 </style>
