@@ -34,14 +34,15 @@ export default {
     return {
       userId: null,
       inputText: '',
-      response: '',
+      message: '',
       tasks: null,
       editingTaskId: null,
     }
   },
   methods: {
     async createTask() {
-      this.response = await api.addTask(this.userId, this.inputText)
+      let res = await api.addTask(this.userId, this.inputText)
+      this.message = (res) ? res : 'Valid request'
       this.updateList()
     },
     async deleteTask(id) {
@@ -55,13 +56,12 @@ export default {
       this.editingTaskId = id
       this.inputText = text
     },
-    async editTask() {
-      this.response = await api.updateTask(
-        this.userId,
-        this.editingTaskId,
-        this.inputText
-      )
-      if (this.response) {
+    async editTask(){
+      let res = await api.updateTask(this.userId, this.editingTaskId, this.inputText)
+      if(res){
+        this.message = 'Valid request'
+      }else{
+        this.message = res
         this.editingTaskId = null
         this.inputText = null
       }
