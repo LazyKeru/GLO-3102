@@ -4,24 +4,32 @@
       <button @click="createUser">Créer mon compte !</button>
     </div>
     <div v-if="userId">
-      <h3>Bonjour utilisateur {{userId}}</h3>
-      <h2 v-if="!editingTaskId" >Création d'une tâche</h2>
-      <h2 v-if="editingTaskId" >Edition de la tâche</h2>
+      <h3>Bonjour utilisateur {{ userId }}</h3>
+
+      <h2 v-if="editingTaskId">Edition de la tâche</h2>
+      <h2 v-else>Création d'une tâche</h2>
+
       <label>Le nom de la tâche (Obligatoire)</label>
-      <input type="text" v-model="inputText" placeholder="edit me"/>
-      <button v-if="!editingTaskId" @click="createTask">Créer la tâche</button>
+
+      <input type="text" v-model="inputText" placeholder="edit me" />
       <button v-if="editingTaskId" @click="editTask">Changer la tâche</button>
-      <p>{{response}}</p>
+      <button v-else @click="createTask">Créer la tâche</button>
+
+      <p>{{ response }}</p>
     </div>
-    <li v-for="task in tasks">
-      <label for="task">{{task.name}} </label> <button @click="deleteTask(task.id)">-</button><button @click="startEditTask(task.id, task.name)">edit</button>
-    </li>
+    <ul>
+      <li v-for="(task,index) in tasks" v-bind:key="index">
+        <input type="checkbox" name="taskCheckbox" @change="deleteTask(task.id)">
+        <label for="taskCheckbox">{{ index+1 }} : {{ task.name }} </label>
+        <button @click="startEditTask(task.id, task.name)">edit</button>
+      </li>
+    </ul>
   </main>
 </template>
 
 <script>
 import * as api from '../service/api'
-export default{
+export default {
   data() {
     return {
       userId: null,
@@ -33,33 +41,37 @@ export default{
   },
   methods: {
     async createTask() {
-      this.response = await api.addTask(this.userId, this.inputText) 
+      this.response = await api.addTask(this.userId, this.inputText)
       this.updateList()
     },
     async deleteTask(id) {
-      await api.deleteTask(this.userId, id) 
+      await api.deleteTask(this.userId, id)
       this.updateList()
     },
-    async updateList(){
+    async updateList() {
       this.tasks = await api.getAllTasks(this.userId)
     },
-    async startEditTask(id, text){
+    async startEditTask(id, text) {
       this.editingTaskId = id
       this.inputText = text
     },
-    async editTask(){
-      this.response = await api.updateTask(this.userId, this.editingTaskId, this.inputText)
-      if(this.response){
+    async editTask() {
+      this.response = await api.updateTask(
+        this.userId,
+        this.editingTaskId,
+        this.inputText
+      )
+      if (this.response) {
         this.editingTaskId = null
         this.inputText = null
       }
       this.updateList()
-    }
+    },
   },
   computed: {
-    createUser: (e) =>{
+    createUser: (e) => {
       e.userId = api.createUser
-    }
+    },
   },
 }
 </script>
