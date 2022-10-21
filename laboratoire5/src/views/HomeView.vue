@@ -12,16 +12,28 @@
       <label>Le nom de la tâche (Obligatoire)</label>
 
       <input type="text" v-model="inputText" placeholder="edit me" />
+      <p v-if="inputError" style="color: red">
+        Erreur: veulliez rentrer au moins un caractere (autre que espace)
+      </p>
       <button v-if="editingTaskId" @click="editTask">Changer la tâche</button>
       <button v-else @click="createTask">Créer la tâche</button>
-
-      <p>{{ response }}</p>
     </div>
     <ul>
-      <li v-for="(task,index) in tasks" v-bind:key="index">
-        <input type="checkbox" name="taskCheckbox" @change="deleteTask(task.id)">
-        <label for="taskCheckbox">{{ index+1 }} : {{ task.name }} </label>
-        <button @click="startEditTask(task.id, task.name)">edit</button>
+      <li v-for="(task, index) in tasks" v-bind:key="index">
+        <label for="taskDone">{{ index + 1 }} : {{ task.name }}</label>
+        <button
+          name="taskDone"
+          @click="deleteTask(task.id)"
+          :disabled="isDoneBtnDisable"
+        >
+          Done
+        </button>
+        <button
+          @click="startEditTask(task.id, task.name)"
+          :disabled="isUpdateBtnDisable"
+        >
+          edit
+        </button>
       </li>
     </ul>
   </main>
@@ -37,40 +49,69 @@ export default {
       message: '',
       tasks: null,
       editingTaskId: null,
+      blockActions: false,
+      inputError: false,
     }
   },
   methods: {
     async createTask() {
-      let res = await api.addTask(this.userId, this.inputText)
-      this.message = (res) ? res : 'Valid request'
-      this.updateList()
+      if (this.isInputValid(this.inputText)) {
+        const res = await api.addTask(this.userId, this.inputText)
+        if (res) {
+          this.updateList()
+        }
+        this.inputText = null
+      }
     },
     async deleteTask(id) {
-      await api.deleteTask(this.userId, id)
-      this.updateList()
+      this.blockActions = true
+      const res = await api.deleteTask(this.userId, id)
+      if (res) {
+        this.updateList()
+      }
     },
     async updateList() {
       this.tasks = await api.getAllTasks(this.userId)
+      this.blockActions = false
     },
     async startEditTask(id, text) {
       this.editingTaskId = id
       this.inputText = text
     },
-    async editTask(){
-      let res = await api.updateTask(this.userId, this.editingTaskId, this.inputText)
-      if(res){
-        this.message = 'Valid request'
-      }else{
-        this.message = res
-        this.editingTaskId = null
-        this.inputText = null
+    async editTask() {
+      if (this.isInputValid(this.inputText)) {
+        let res = await api.updateTask(
+          this.userId,
+          this.editingTaskId,
+          this.inputText
+        )
+        if (res) {
+          this.message = res
+          this.editingTaskId = null
+          this.inputText = null
+        }
+        this.updateList()
       }
-      this.updateList()
+    },
+    isInputValid(input) {
+      if (!input.replace(/\s/g, '').length) {
+        this.inputError = true
+        return false
+      } else {
+        this.inputError = false
+        return true
+      }
     },
   },
   computed: {
     createUser: (e) => {
       e.userId = api.createUser
+    },
+    isUpdateBtnDisable() {
+      return this.editingTaskId || this.blockActions ? true : false
+    },
+    isDoneBtnDisable() {
+      return this.editingTaskId || this.blockActions ? true : false
     },
   },
 }

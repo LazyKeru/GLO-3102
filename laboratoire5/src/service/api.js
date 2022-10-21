@@ -12,7 +12,7 @@ const createUser = await fetch(baseUrl + '/users', {
     .then(checkStatus)
     .then(response => response.json())
     .then(data => data.id)
-    .catch(error => console.error(error))
+    .catch(error => alert(error))
 
 const getAllTasks = async (userId) => await fetch(baseUrl + '/' + userId + '/tasks', {
       method: 'GET',
@@ -20,7 +20,7 @@ const getAllTasks = async (userId) => await fetch(baseUrl + '/' + userId + '/tas
     .then(checkStatus)
     .then(response => response.json())
     .then(data => data.tasks)
-    .catch(error => console.error(error))
+    .catch(error => alert(error))
 
 const addTask = async (userId, noteName) => await fetch(baseUrl + '/' + userId + '/tasks', {
       method: 'POST',
@@ -32,8 +32,7 @@ const addTask = async (userId, noteName) => await fetch(baseUrl + '/' + userId +
     })
     .then(checkStatus)
     .then(response => response.json())
-    .then(data => data.response)
-    .catch(error => error)
+    .catch(error => alert(error))
 
 const updateTask = async (userId, noteId, newNoteName) => await fetch(baseUrl + '/' + userId + '/tasks/' + noteId, {
       method: 'PUT',
@@ -45,8 +44,7 @@ const updateTask = async (userId, noteId, newNoteName) => await fetch(baseUrl + 
     })
     .then(checkStatus)
     .then(response => response.json())
-    .then(data => data.ok)
-    .catch(error => console.error(error))
+    .catch(error => alert(error))
 
 //returns true if deleted succesfully false otherwise
 const deleteTask = async (userId, noteId) => await fetch(baseUrl + '/' + userId + '/tasks/' + noteId, {
@@ -54,6 +52,6 @@ const deleteTask = async (userId, noteId) => await fetch(baseUrl + '/' + userId 
     })
     .then(checkStatus)
     .then(() => true)
-    .catch(error => console.error(error))
+    .catch(error => alert(error))
 
 export { createUser, addTask, getAllTasks, updateTask, deleteTask }
