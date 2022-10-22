@@ -1,6 +1,14 @@
 # laboratoire5 - Redo of laboratoire4 with vueJS
 
-## Project Setup
+Pour exectuer notre projet :
+
+```sh
+npm install
+npm run build
+```
+
+
+## Command list
 
 ```sh
 npm install
