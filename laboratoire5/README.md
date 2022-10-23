@@ -2,26 +2,20 @@
 
 Pour exectuer notre projet :
 
-```sh
-npm install
-npm run build
-```
-
-
-## Command list
+A - En mode développeur:
 
 ```sh
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
+Accéder depuis votre navigateur à localhost:5173
 
-### Compile and Minify for Production
+B - En mode production: 
 
 ```sh
+npm install
 npm run build
+npm run preview
 ```
+
+Accéder depuis votre navigateur à localhost:4173
