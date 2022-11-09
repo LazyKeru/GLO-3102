@@ -1,6 +1,7 @@
 <script>
 import fakeCall from "../service/FakeAPI"
 import DayItem from './DayItem.vue'
+
 export default{
   data(){
     return {
