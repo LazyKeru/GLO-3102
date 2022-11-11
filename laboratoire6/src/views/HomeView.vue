@@ -1,21 +1,63 @@
-<script setup>
+<script>
 import WeatherHeader from '../components/WeatherHeader.vue'
 import WeatherBody from '../components/WeatherBody.vue'
-import { reactive, toRef  } from 'vue'
 import Coords from '../service/location';
+import fakeCall from "../service/FakeAPI"
 
+export default {
+  data() {
+    return {
+      post: fakeCall(),
+      coords: null,
+      loading: false,
+      error: null,
+      lat: 0,
+      lon: 0
+    }
+  },
+  created() {
+    this.coords = new Coords();
+  },
+  mounted() {
+    this.loading = true;
+    this.updateCord();
+  },
+  methods: {
+    updateCord() {
+      this.loading = true;
+      this.coords.fetchPosition()
+        .then((position) => {
+          console.log(position);
+          this.lat = position.coords.latitude
+          this.lon = position.coords.longitude
+          // this.post = fakeCall()
+          // console.log(this.post)
+          this.loading = false
+        })
+        .catch((err) => this.error = err)
+    }
+  },
+  components: {
+    WeatherHeader,
+    WeatherBody
+  }
+}
 
-// Not working properly
-const coords = reactive(new Coords());
-const latitude = toRef(coords, 'latitude')
 
 </script>
 
 <template>
   <main>
-    <h1>Test {{latitude}}</h1>
-    <WeatherHeader/>
-    <WeatherBody/>
+    <div v-if="loading" >
+      loading...
+    </div>
+    <div v-if="error">
+      {{error.message}}
+    </div>
+    <div v-if="!loading">
+      <WeatherHeader :city_name="post.city_name" :latitude="lat" :longitude="lon" />
+      <WeatherBody/>
+    </div>
   </main>
 </template>
 

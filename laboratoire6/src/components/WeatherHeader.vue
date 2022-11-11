@@ -1,12 +1,30 @@
-<script setup>
-
+<script>
+  export default{
+    name: "WeatherHeader",
+    props: {
+      city_name: {
+        type: String,
+        required: true
+        // validator: (value) => {
+        //   return value >= 0
+        // }
+      },
+      longitude: {
+        required: true
+      },
+      latitude: {
+        required: true
+      }
+    }
+  }
 </script>
 
 <template>
   <div class="container">
     <div class="introduction">
-      <h1 class="green">Weather Station</h1>
+      <h1 class="green">Weather in {{city_name}}</h1>
       <h3 class="blue">Powered by <a href="https://www.weatherbit.io/" target="_blank" rel="noopener" class="green">Weatherbit.io</a></h3>
+      <h5>Your cordinates [{{longitude}}, {{latitude}}]</h5>
     </div>
     <div class="location">
       <img class="small"/>
