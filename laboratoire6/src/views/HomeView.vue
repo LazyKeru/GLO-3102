@@ -2,13 +2,15 @@
 import WeatherHeader from '../components/WeatherHeader.vue'
 import WeatherBody from '../components/WeatherBody.vue'
 import Coords from '../service/location';
+import WeatherService from '../service/weather';
 import fakeCall from "../service/FakeAPI"
 
 export default {
   data() {
     return {
-      post: fakeCall(),
+      post: undefined,
       coords: null,
+      weatherService: null,
       loading: false,
       error: null,
       lat: 0,
@@ -16,10 +18,11 @@ export default {
     }
   },
   created() {
+    this.loading = true;
     this.coords = new Coords();
+    this.weatherService = new WeatherService();
   },
   mounted() {
-    this.loading = true;
     this.updateCord();
   },
   methods: {
@@ -30,11 +33,19 @@ export default {
           console.log(position);
           this.lat = position.coords.latitude
           this.lon = position.coords.longitude
-          // this.post = fakeCall()
-          // console.log(this.post)
-          this.loading = false
+          this.updateForecast()
         })
         .catch((err) => this.error = err)
+    },
+    updateForecast() {
+      this.loading = true;
+      this.weatherService.forecast(this.lat,this.lon,7)
+        .then((res) => {
+          this.post = res
+          this.loading = false
+        }
+        )
+        .catch(error => console.alert(error.message))
     }
   },
   components: {
@@ -42,8 +53,6 @@ export default {
     WeatherBody
   }
 }
-
-
 </script>
 
 <template>

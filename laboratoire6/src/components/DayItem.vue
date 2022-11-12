@@ -10,7 +10,7 @@ export default {
       // }
     },
     tempeture: {
-      type: String,
+      type: Number,
       required: true,
       // validator: (value) => {
       //   return value >= 0
