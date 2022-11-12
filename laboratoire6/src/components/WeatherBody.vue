@@ -22,9 +22,23 @@ export default{
   <div v-if="loading">
     <p>loading</p>
   </div>
-  <div v-if="post">
+  <div class="days-containers" v-if="post">
     <div v-for="day in post.data">
       <DayItem :day-time=day.datetime :tempeture=day.temp></DayItem>
     </div>
   </div>
 </template>
+
+<style>
+.days-containers{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+@media (min-width: 1024px) {
+  .days-containers {
+    flex-direction: row;
+  }
+}
+</style>
+

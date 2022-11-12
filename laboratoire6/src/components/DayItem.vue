@@ -29,6 +29,14 @@ export default {
 </template>
 
 <style>
+.day{
+  background-color:cornflowerblue;
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 /* .item {
   margin-top: 2rem;
   display: flex;

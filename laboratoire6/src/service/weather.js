@@ -1,6 +1,6 @@
 const api_key = "";
 const api_base_url = "http://api.weatherbit.io/v2.0/"
-const units = "S"
+const units = "M"
 const lang = "en"
 
 const checkStatus = (response) => {
