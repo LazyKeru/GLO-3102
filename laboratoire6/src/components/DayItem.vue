@@ -1,110 +1,47 @@
 <script>
 export default {
-  name: "DayItem",
+  name: 'DayItem',
   props: {
-    dayTime: {
+    date: {
       type: String,
       required: true,
-      // validator: (value) => {
-      //   return value >= 0
-      // }
     },
-    tempeture: {
+    minTmp: {
       type: Number,
       required: true,
-      // validator: (value) => {
-      //   return value >= 0
-      // }
-    }
-  }
+    },
+    maxTmp: {
+      type: Number,
+      required: true,
+    },
+    weatherIcon: {
+      type: String,
+      required: true,
+    },
+  },
 }
 </script>
 
 <template>
   <div class="day">
-    <h3 class="weekday">{{dayTime}}</h3>
-    <img src="" alt=""/>
-    <h3 class="tempeture">{{tempeture}}</h3>
+    <h3 class="weekday">{{ date }}</h3>
+    <img
+      :src="'./src/assets/weatherIcons/' + weatherIcon + '.png'"
+      alt="weather icon"
+    />
+    <h3> Max : {{ maxTmp }} Celsius</h3>
+    <h3> Min : {{ minTmp }} Celsius</h3>
   </div>
 </template>
 
 <style>
-.day{
-  background-color:cornflowerblue;
+.day {
   margin: 1rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: solid 3px black;
+  border-radius: 5px;
 }
-/* .item {
-  margin-top: 2rem;
-  display: flex;
-}
-
-.details {
-  flex: 1;
-  margin-left: 1rem;
-}
-
-i {
-  display: flex;
-  place-items: center;
-  place-content: center;
-  width: 32px;
-  height: 32px;
-
-  color: var(--color-text);
-}
-
-h3 {
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin-bottom: 0.4rem;
-  color: var(--color-heading);
-}
-
-@media (min-width: 1024px) {
-  .item {
-    margin-top: 0;
-    padding: 0.4rem 0 1rem calc(var(--section-gap) / 2);
-  }
-
-  i {
-    top: calc(50% - 25px);
-    left: -26px;
-    position: absolute;
-    border: 1px solid var(--color-border);
-    background: var(--color-background);
-    border-radius: 8px;
-    width: 50px;
-    height: 50px;
-  }
-
-  .item:before {
-    content: ' ';
-    border-left: 1px solid var(--color-border);
-    position: absolute;
-    left: 0;
-    bottom: calc(50% + 25px);
-    height: calc(50% - 25px);
-  }
-
-  .item:after {
-    content: ' ';
-    border-left: 1px solid var(--color-border);
-    position: absolute;
-    left: 0;
-    top: calc(50% + 25px);
-    height: calc(50% - 25px);
-  }
-
-  .item:first-of-type:before {
-    display: none;
-  }
-
-  .item:last-of-type:after {
-    display: none;
-  }
-} */
 </style>

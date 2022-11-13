@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>J'aime la pizza et la bière</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+  </head>
+  <body>
+    <h1>Opening hours</h1>
+    <ul>
+      {{#with opening_hours}}
+      <li>Dimanche : {{sunday}}</li>
+      <li>Lundi : {{monday}}</li>
+      <li>Mardi : {{tuesday}}</li>
+      <li>Mercredi : {{wednesday}}</li>
+      <li>Jeudi : {{thursday}}</li>
+      <li>Samedi : {{saturday}}</li>
+      {{/with}}
+    </ul>
+
+    <h1>Picture</h1>
+    {{#each pictures}}
+    <img src="{{this}}" />
+    {{/each}}
+
+    <h1>Genres</h1>
+    <ul>
+      {{#each genres}}
+      <li>{{this}}</li>
+      {{/each}}
+    </ul>
+
+    <p>Nom {{name}}</p>
+    <p>Tel {{tel}}</p>
+    <p>Adresse {{address}}</p>
+
+
+    <!-- on cosidere que la pricing est sur 5  -->
+    <p>Prix {{price_range}} / 5</p>
+    <!-- on cosidere que la note est sur 5  -->
+    <p>Note {{rating}} / 5</p>
+
+    <map locaiton={{location}}>
+  </body>
+</HTML>

@@ -1,9 +1,8 @@
 <script>
-import WeatherHeader from '../components/WeatherHeader.vue'
-import WeatherBody from '../components/WeatherBody.vue'
+import WeatherHeader from '../components/WeatherHeader.vue';
+import WeatherBody from '../components/WeatherBody.vue';
 import Coords from '../service/location';
 import WeatherService from '../service/weather';
-import fakeCall from "../service/FakeAPI"
 
 export default {
   data() {
@@ -30,7 +29,6 @@ export default {
       this.loading = true;
       this.coords.fetchPosition()
         .then((position) => {
-          console.log(position);
           this.lat = position.coords.latitude
           this.lon = position.coords.longitude
           this.updateForecast()
@@ -45,7 +43,7 @@ export default {
           this.loading = false
         }
         )
-        .catch(error => console.alert(error.message))
+        .catch(error => console.error(error.message))
     }
   },
   components: {
@@ -58,24 +56,14 @@ export default {
 <template>
   <main>
     <div v-if="loading" >
-      loading...
+      loading... (TIP : make sure location is enabled in your browser for this website)
     </div>
     <div v-if="error">
       {{error.message}}
     </div>
     <div v-if="!loading">
       <WeatherHeader :city_name="post.city_name" :latitude="lat" :longitude="lon" />
-      <WeatherBody/>
+      <WeatherBody :post="post"/>
     </div>
   </main>
 </template>
-
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
