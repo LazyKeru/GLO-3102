@@ -1,8 +1,8 @@
-# laboratoire5 - weather page
+# laboratoire6 - weather page
 
 Une simple application en VueJS pour afficher la météo. Avec 2 composants:
     - Entete géolocalisé
-    - Prévisions de la semaine (5 days forecast)
+    - Prévisions de la semaine (7 days forecast)
 
 *On utilise l'API Weatherbit :* **[weatherbit.io](https://weatherbit.io)**
 *Documentation de l'API :* **[API Documentation](https://www.weatherbit.io/api)**
