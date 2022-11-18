@@ -1,24 +1,21 @@
-const express = require('express') 
-const app = express()
-const port = 8080;
-
-var bodyParser = require('body-parser');
-
-// configure the app to use bodyParser()
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-app.use(bodyParser.json());
-
+const express = require('express')
 const todo = require('./routes/todo.js')
 const user = require('./routes/user.js')
 const heartbeat = require('./routes/heartbeat.js')
 
+const app = express()
+const port = 8000
 
+var bodyParser = require('body-parser')
 
-app.listen(
-    port, 
-    () => {  console.log("Serveur listening on port " + port + "..." )
+// configure the app to use bodyParser()
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+)
+app.use(bodyParser.json())
+
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
@@ -26,6 +23,8 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.listen(port, () => {
+  console.log('Server listening on port ' + port + '...')
 })
 
 app.get('/heartbeat', heartbeat.heartbeat)
