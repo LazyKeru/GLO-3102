@@ -25,7 +25,7 @@ app.listen(port, () => {
   console.log('Server listening on port ' + port + '...')
 })
 
-app.get('/users', users.getUser)
+app.get('/users/:apiKey', users.getUser)
 
 app.post('/users', users.createUser)
 
