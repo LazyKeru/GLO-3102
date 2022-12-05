@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Laboratoire 9</title>
+        <style>
+          body {
+              background-color: #E7F2F8;
+          }
+
+          .footer {
+            padding: 1rem;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color:#74BDCB;
+          }
+
+          .input {
+            background-color: #EFE7BC;
+            border: none;
+            width: fit-content;
+            margin-right: 1rem;
+          }
+
+          .button {
+            background-color: #FFA384;
+            border: none;
+            color: #E7F2F8;
+            text-decoration: none;
+            cursor: pointer;
+          }
+
+          .button:hover {
+            background-color: #E7F2F8;
+            color: #FFA384;
+          }
+
+          .messages {
+            list-style: none;
+            color: #FFA384;
+          }
+        </style>
+    </head>
+    <body>
+        <ul id="messages" class="messages"></ul>
+        <div id="user-interface" class="footer">
+          <div id="loginContainer">
+            <p>Enter a simple username before using our chat room</p>
+            <form id="login" action="" class="form">
+              <input id="username" autocomplete="off" class="input" /><button class="button">Validate</button>
+            </form>
+          </div>
+          <div id="sendContainer">
+            <p>Go ahead and enjoy our chat room</p>
+            <form id="send" action="" class="form">
+              <input id="input" autocomplete="off" class="input" /><button class="button">Send</button>
+            </form>
+          </div>
+        </div>
+    </body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+  
+        var messages = document.getElementById('messages');
+        
+        var send = document.getElementById('send');
+        var sendContainer = document.getElementById('sendContainer')
+        var input = document.getElementById('input');
+        
+
+        var login = document.getElementById('login');
+        var loginContainer = document.getElementById('loginContainer')
+        var username = document.getElementById('username');
+
+
+        // Hide send element at the start
+        sendContainer.style.display = "none";
+
+        login.addEventListener('submit', function(e) {
+          e.preventDefault();
+          if (username.value) {
+            sendContainer.style.display = "block";
+            loginContainer.style.display = "none";
+          }
+        });
+
+        send.addEventListener('submit', function(e) {
+          e.preventDefault();
+          if (input.value) {
+            socket.emit('chat message', `${username.value}: ${input.value}`);
+            input.value = '';
+          }
+        });
+  
+        socket.on('chat message', function(msg) {
+          var item = document.createElement('li');
+          item.textContent = msg;
+          messages.appendChild(item);
+          window.scrollTo(0, document.body.scrollHeight);
+        });
+      </script>
+</html>
